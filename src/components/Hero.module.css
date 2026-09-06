@@ -3,6 +3,7 @@
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
+  margin-top: clamp(48px, 4.5vw, 68px);
   height: calc(100vh - clamp(48px, 4.5vw, 68px));
   min-height: 400px;
   max-height: 851px;

@@ -1,9 +1,37 @@
+import { useEffect, useState } from "react";
 import me from "../assets/me.png";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
+  const [scrollOpacity, setScrollOpacity] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const fadeStart = 0;
+      const fadeEnd = windowHeight * 0.6;
+
+      if (scrollPosition <= fadeStart) {
+        setScrollOpacity(1);
+      } else if (scrollPosition >= fadeEnd) {
+        setScrollOpacity(0);
+      } else {
+        const opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+        setScrollOpacity(opacity);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className={styles.hero}>
+    <section 
+      id="home"
+      className={styles.hero} 
+      style={{ opacity: scrollOpacity }}
+    >
       <h1 className={styles.portfolioTitle} aria-hidden="true">
         PORTFOLIO
       </h1>

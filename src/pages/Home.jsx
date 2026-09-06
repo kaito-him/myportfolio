@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar.jsx";
 import Hero from "../components/Hero.jsx";
+import Education from "../components/Education.jsx";
 import styles from "./Home.module.css";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div className={styles.page}>
       <Navbar />
       <Hero />
+      <Education />
     </div>
   );
 }

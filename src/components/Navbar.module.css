@@ -1,6 +1,8 @@
 .navbar {
-  position: relative;
-  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   width: 100%;
   height: clamp(48px, 4.5vw, 68px);
   background: var(--navbar-bg);
@@ -9,6 +11,7 @@
   align-items: center;
   padding: 0 clamp(16px, 1.86vw, 28px);
   animation: navIn 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  backdrop-filter: blur(10px);
 }
 
 @keyframes navIn {

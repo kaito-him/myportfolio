@@ -19,6 +19,15 @@ body {
   width: 100%;
   overflow-x: hidden;
   background: var(--background);
+  /* Hide scrollbar for Chrome, Safari, Edge, Opera */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body {
