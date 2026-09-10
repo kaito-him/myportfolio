@@ -28,7 +28,7 @@
 }
 
 .description {
-  font-size: 2rem;
+  font-size: 1.65rem;
   line-height: 1.6;
   color: #4a5568;
   font-weight: 500;
@@ -36,39 +36,20 @@
   text-align: left;
 }
 
-.imagesSection {
+.carouselSection {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.imageGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 600px;
-}
-
-.interestImage {
+  min-height: 700px;
   width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   opacity: 0;
-  transform: translateY(40px) scale(0.9);
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translateX(60px);
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.interestImage.imageVisible {
+.carouselSection.carouselVisible {
   opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.interestImage:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateX(0);
 }
 
 /* Responsive Design */
@@ -78,15 +59,11 @@
   }
 
   .description {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
-  .imageGrid {
-    max-width: 500px;
-  }
-
-  .interestImage {
-    height: 240px;
+  .carouselSection {
+    min-height: 550px;
   }
 }
 
@@ -107,13 +84,17 @@
   }
 
   .description {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     text-align: center;
   }
 
-  .imageGrid {
-    max-width: 600px;
-    margin: 0 auto;
+  .carouselSection {
+    transform: translateY(40px);
+    min-height: 450px;
+  }
+
+  .carouselSection.carouselVisible {
+    transform: translateY(0);
   }
 }
 
@@ -123,25 +104,16 @@
   }
 
   .description {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
-  .imageGrid {
-    gap: 1rem;
-    max-width: 100%;
-  }
-
-  .interestImage {
-    height: 200px;
+  .carouselSection {
+    min-height: 350px;
   }
 }
 
 @media (max-width: 480px) {
-  .imageGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .interestImage {
-    height: 250px;
+  .carouselSection {
+    min-height: 300px;
   }
 }

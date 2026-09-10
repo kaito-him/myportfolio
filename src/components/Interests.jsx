@@ -1,14 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Interests.module.css";
-import DecryptedText from "./DecryptedText";
+import ThreeDCarousel from "./ui/3d-carousel";
 import chess from "../assets/interests/chess.jpg";
 import music from "../assets/interests/music.jpg";
 import movies from "../assets/interests/movies.jpg";
+import books from "../assets/interests/books.jpg";
 import graphicDesign from "../assets/interests/graphic design.jpg";
 
 export default function Interests() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+
+  // Array of interest images for the 3D carousel
+  const interestImages = [
+    chess,
+    music,
+    movies,
+    books,
+    graphicDesign
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,33 +59,15 @@ export default function Interests() {
           </p>
         </div>
         
-        <div className={styles.imagesSection}>
-          <div className={styles.imageGrid}>
-            <img 
-              src={chess} 
-              alt="Chess" 
-              className={`${styles.interestImage} ${isVisible ? styles.imageVisible : ""}`}
-              style={{ transitionDelay: "0.1s" }}
-            />
-            <img 
-              src={music} 
-              alt="Music" 
-              className={`${styles.interestImage} ${isVisible ? styles.imageVisible : ""}`}
-              style={{ transitionDelay: "0.2s" }}
-            />
-            <img 
-              src={movies} 
-              alt="Movies" 
-              className={`${styles.interestImage} ${isVisible ? styles.imageVisible : ""}`}
-              style={{ transitionDelay: "0.3s" }}
-            />
-            <img 
-              src={graphicDesign} 
-              alt="Graphic Design" 
-              className={`${styles.interestImage} ${isVisible ? styles.imageVisible : ""}`}
-              style={{ transitionDelay: "0.4s" }}
-            />
-          </div>
+        <div className={`${styles.carouselSection} ${isVisible ? styles.carouselVisible : ""}`}>
+          <ThreeDCarousel 
+            images={interestImages}
+            radius={280}
+            cardW={320}
+            cardH={360}
+            autoRotate={true}
+            rotationSpeed={0.12}
+          />
         </div>
       </div>
     </section>
