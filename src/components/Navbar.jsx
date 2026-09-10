@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
+import cvIcon from "../assets/cv.png";
+import cvPdf from "../assets/Cvfr.pdf";
 import styles from "./Navbar.module.css";
 
 const LINKS = [
@@ -130,6 +132,17 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+
+      <a
+        href={cvPdf}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.cvIcon}
+        aria-label="View CV"
+      >
+        <img src={cvIcon} alt="CV" />
+        <span className={styles.cvText}>Cv</span>
+      </a>
     </nav>
   );
 }

@@ -107,7 +107,7 @@ export default function Education() {
         <TextType 
           text={[
             "2026 - present",
-            "Master's Degree in Computer Science – FSEGS"
+            "software engineering student at isimsf"
           ]}
           as="div"
           typingSpeed={50}

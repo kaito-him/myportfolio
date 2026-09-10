@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar.jsx";
 import Hero from "../components/Hero.jsx";
 import Education from "../components/Education.jsx";
+import Projects from "../components/Projects.jsx";
+import Interests from "../components/Interests.jsx";
 import styles from "./Home.module.css";
 
 export default function Home() {
@@ -9,6 +11,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Education />
+      <Projects />
+      <Interests />
     </div>
   );
 }

@@ -93,6 +93,43 @@
   transform: scaleX(1);
 }
 
+.cvIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 0.8vw, 12px);
+  margin-left: auto;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+.cvText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: clamp(12px, 1.3vw, 20px);
+  color: var(--navy);
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cvIcon img {
+  height: clamp(24px, 2.5vw, 38px);
+  width: auto;
+  object-fit: contain;
+}
+
+.cvIcon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.cvIcon:hover .cvText {
+  color: #000;
+}
+
+.cvIcon:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 700px) {
   .navList {
     gap: 14px;
@@ -100,5 +137,8 @@
   }
   .navLink {
     font-size: 11px;
+  }
+  .cvIcon img {
+    height: 20px;
   }
 }
